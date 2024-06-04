@@ -1,15 +1,12 @@
 import { createRoot } from "react-dom/client";
+import { MainView } from "./components/main-view/main-view";
 
 //indicates you need to bundle scss file
 import "./index.scss";
 
 //main component
 const MarvelDBApp = () => {
-  return (
-    <div className="marvelDB">
-      <div>Good morning</div>
-    </div>
-  );
+  return <MainView />;
 };
 //finds root of app
 const container = document.querySelector("#root");
