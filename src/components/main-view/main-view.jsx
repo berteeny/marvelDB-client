@@ -12,7 +12,7 @@ export const MainView = () => {
         name: "Jon Favreau",
         bio: "Jonathan Kolia Favreau is an American filmmaker and actor, well known for his directorial and acting credits in multple films within the Marvel Cinematic Universe.",
         birth: "1966-10-19",
-        death: "",
+        death: "-",
       },
       length: "2h 6m",
       genre: {
@@ -32,7 +32,7 @@ export const MainView = () => {
         name: "Louis Leterrier",
         bio: "Louis Leterrier is a French film and television director, best known for his work in action films such as 'Unleashed' and 'Clash of the Titans'.",
         birth: "1973-06-17",
-        death: "",
+        death: "-",
       },
       length: "1h 52m",
       genre: {
@@ -53,7 +53,7 @@ export const MainView = () => {
         name: "Jon Favreau",
         bio: "Jonathan Kolia Favreau is an American filmmaker and actor, well known for his directorial and acting credits in multple films within the Marvel Cinematic Universe.",
         birth: "1966-10-19",
-        death: "",
+        death: "-",
       },
       length: "2h 4m",
       genre: {
