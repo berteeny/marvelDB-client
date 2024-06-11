@@ -11,24 +11,24 @@ export const MainView = () => {
     fetch("https://movie-api-v2dh.onrender.com/movies")
       .then((response) => response.json())
       .then((data) => {
-        const moviesFromApi = data.docs.map((doc) => {
+        const moviesFromApi = data.map((movie) => {
           return {
-            id: doc.key,
-            title: doc.title,
-            release: doc.release,
-            length: doc.length,
-            description: doc.description,
+            id: movie.key,
+            title: movie.title,
+            release: movie.release,
+            length: movie.length,
+            description: movie.description,
             director: {
-              name: doc.director.name,
-              bio: doc.director.bio,
-              birth: doc.director.birth,
-              death: doc.director.death,
+              name: movie.director.name,
+              bio: movie.director.bio,
+              birth: movie.director.birth,
+              death: movie.director.death,
             },
             genre: {
-              name: doc.genre.name,
-              description: doc.genre.description,
+              name: movie.genre.name,
+              description: movie.genre.description,
             },
-            image: doc.imagePath,
+            image: movie.imagePath,
           };
         });
         console.log("movies from api: ", data);
