@@ -4,7 +4,7 @@ export const MovieView = ({ movie, onCloseClick }) => {
   return (
     <div>
       <div>
-        <img src={movie.imagePath} />
+        <img src={movie.image} />
       </div>
       <br />
       <div>
