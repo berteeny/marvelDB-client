@@ -7,8 +7,8 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
     const data = {
-      access: username,
-      secret: password,
+      username: username,
+      password: password,
     };
     fetch("https://movie-api-v2dh.onrender.com/login", {
       method: "POST",
