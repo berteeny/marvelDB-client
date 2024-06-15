@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export const SignupView = () => {
-  const [username, setUsername] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [birthday, setBirthday] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,7 +41,7 @@ export const SignupView = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          minlength="6"
+          minLength="6"
         />
       </label>
       <label>
@@ -51,7 +51,7 @@ export const SignupView = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          minlength="8"
+          minLength="8"
         />
       </label>
       <label>
