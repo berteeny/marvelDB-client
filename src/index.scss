@@ -1,5 +1,5 @@
-$color: purple;
+$body-bg: rgb(245, 240, 233);
+$primary: rgb(182, 45, 29);
+$info: rgb(237, 29, 36);
 
-.marvelDB {
-  color: $color;
-}
+@import "~bootstrap/scss/bootstrap.scss";
