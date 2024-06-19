@@ -3,16 +3,18 @@ import { Button, Card } from "react-bootstrap";
 
 //movie card function
 export const MovieCard = ({ movie, onMovieClick }) => {
+  const altText = `${movie.title} cover art`;
   return (
     <Card className="h-100 bg-light">
-      <Card.Img variant="top" src={movie.image} />
+      <Card.Img variant="top" alt={altText} src={movie.image} type="img" />
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
-        <Card.Text >
+        <Card.Text>
           Release: {movie.release} <br />
           Runtime: {movie.length}
         </Card.Text>
         <Button
+          type="button"
           variant="outline-info"
           onClick={() => {
             onMovieClick(movie);

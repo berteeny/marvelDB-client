@@ -4,17 +4,19 @@ import "./movie-view.scss";
 export const MovieView = ({ movie, onCloseClick }) => {
   let director = movie.director;
   let genre = movie.genre;
+  const altText = `${movie.title} cover art`;
   return (
     <div className="mt-5 movie-view">
       <div className="movie-image">
-        <img src={movie.image} />
+        <img src={movie.image} alt={altText} type="img" />
       </div>
       <br />
       <div>
-        <div>
+        <div className="fs-3 mt-3">
           <span className="fw-bold">Title: </span>
           <span>{movie.title}</span>
         </div>
+        <br />
         <div>
           <span className="fw-bold">Release: </span>
           <span>{movie.release}</span>
@@ -48,7 +50,12 @@ export const MovieView = ({ movie, onCloseClick }) => {
           <span>{genre.description}</span>
         </div>
         <br />
-        <Button className="mb-4" variant="primary" onClick={onCloseClick}>
+        <Button
+          type="button"
+          className="mb-4"
+          variant="primary"
+          onClick={onCloseClick}
+        >
           Close
         </Button>
       </div>
