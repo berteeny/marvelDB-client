@@ -1,4 +1,4 @@
-import { Button, Image }  from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import "./movie-view.scss";
 
 export const MovieView = ({ movie, onCloseClick }) => {
@@ -12,39 +12,39 @@ export const MovieView = ({ movie, onCloseClick }) => {
       <br />
       <div>
         <div>
-          <span>Title: </span>
+          <span className="fw-bold">Title: </span>
           <span>{movie.title}</span>
         </div>
         <div>
-          <span>Release: </span>
+          <span className="fw-bold">Release: </span>
           <span>{movie.release}</span>
         </div>
         <div>
-          <span>Length: </span>
+          <span className="fw-bold">Length: </span>
           <span>{movie.length}</span>
         </div>
         <div>
-          <span>Description: </span>
+          <span className="fw-bold">Description: </span>
           <span>{movie.description}</span>
         </div>
         <div>
           <br />
-          <span>Director: </span> <br />
-          <span>Name: </span>
+          <span className="fw-bold">Director: </span> <br />
+          <span className="fw-semibold">Name: </span>
           <span>{director.name}</span> <br />
-          <span>Bio: </span>
+          <span className="fw-semibold">Bio: </span>
           <span>{director.bio}</span> <br />
-          <span>Birth: </span>
+          <span className="fw-semibold">Birth: </span>
           <span>{director.birth}</span> <br />
-          <span>Death: </span>
+          <span className="fw-semibold">Death: </span>
           <span>{director.death}</span>
         </div>
         <br />
         <div>
-          <span>Genre: </span> <br />
-          <span>Name: </span>
+          <span className="fw-bold">Genre: </span> <br />
+          <span className="fw-semibold">Name: </span>
           <span>{genre.name}</span> <br />
-          <span>Description: </span>
+          <span className="fw-semibold">Description: </span>
           <span>{genre.description}</span>
         </div>
         <br />
