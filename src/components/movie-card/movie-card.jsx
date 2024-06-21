@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 //movie card function
-export const MovieCard = ({ movie, onMovieClick }) => {
+export const MovieCard = ({ movie }) => {
   const altText = `${movie.title} cover art`;
   return (
     <Card className="h-100 bg-light">
@@ -13,15 +14,11 @@ export const MovieCard = ({ movie, onMovieClick }) => {
           Release: {movie.release} <br />
           Runtime: {movie.length}
         </Card.Text>
-        <Button
-          type="button"
-          variant="outline-info"
-          onClick={() => {
-            onMovieClick(movie);
-          }}
-        >
-          See More
-        </Button>
+        <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+          <Button type="button" variant="outline-info">
+            See More
+          </Button>
+        </Link>
       </Card.Body>
     </Card>
   );

@@ -1,7 +1,12 @@
 import { Button, Image } from "react-bootstrap";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import "./movie-view.scss";
 
-export const MovieView = ({ movie, onCloseClick }) => {
+export const MovieView = ({ movies }) => {
+  const { movieId } = useParams();
+  const movie = movies.find((m) => m.id === movieId);
+
   let director = movie.director;
   let genre = movie.genre;
   const altText = `${movie.title} cover art`;
@@ -50,14 +55,11 @@ export const MovieView = ({ movie, onCloseClick }) => {
           <span>{genre.description}</span>
         </div>
         <br />
-        <Button
-          type="button"
-          className="mb-4"
-          variant="primary"
-          onClick={onCloseClick}
-        >
-          Close
-        </Button>
+        <Link to={`/`}>
+          <Button type="button" className="mb-4" variant="primary">
+            Close
+          </Button>
+        </Link>
       </div>
     </div>
   );
