@@ -5,7 +5,7 @@ export const NavBar = ({ user, onLoggedOut }) => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" className="fw-bold" style={{color: "rgb(182, 45, 29)"}}>
           MarvelFlix
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
