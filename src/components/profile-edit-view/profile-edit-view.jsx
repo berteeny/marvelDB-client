@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
@@ -11,6 +12,10 @@ export const ProfileEditView = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState(user.email || "");
   const [birthday, setBirthday] = useState(user.birthday || "");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,7 +58,6 @@ export const ProfileEditView = () => {
         }
       ).then((response) => {
         if (response.ok) {
-          alert("Account deleted");
           localStorage.removeItem("user");
           localStorage.removeItem("token");
           window.location.reload();
@@ -116,9 +120,31 @@ export const ProfileEditView = () => {
             Back
           </Button>
         </Link>
-        <Button type="button" variant="outline-primary" onClick={deleteProfile}>
+        <Button variant="outline-primary" onClick={handleShow}>
           Delete profile
         </Button>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header>
+            <Modal.Title>Are you sure?</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            This action will delete all of your information and is irreversible.{" "}
+            <br />
+            Do you wish to continue?
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              variant="outline-primary"
+              onClick={deleteProfile}
+            >
+              Delete profile
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Col>
     </>
   );
