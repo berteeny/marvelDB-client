@@ -37,6 +37,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <Form className="m-3" onSubmit={handleSubmit}>
+      {/* <h1 className="my-5 text-primary fw-bold">Log In</h1> */}
       <Form.Group controlId="loginUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
