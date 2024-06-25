@@ -14,12 +14,14 @@ export const MovieCard = ({ movie }) => {
           Release: {movie.release} <br />
           Runtime: {movie.length}
         </Card.Text>
+      </Card.Body>
+      <Card.Footer className="bg-light border-0 mb-3">
         <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
           <Button type="button" variant="outline-info">
             See More
           </Button>
         </Link>
-      </Card.Body>
+      </Card.Footer>
     </Card>
   );
 };

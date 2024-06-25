@@ -1,4 +1,5 @@
 import { Button, Image } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -13,6 +14,14 @@ export const MovieView = ({ movies }) => {
   const [isFav, setIsFav] = useState(
     user.favMovies ? user.favMovies.indexOf(movieId) >= 0 : false
   );
+  const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+
+  // for modals
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleShow2 = () => setShow2(true);
+  const handleClose2 = () => setShow2(false);
 
   //"favourite" toggle switch functions
   const addFavMovie = () => {
@@ -35,6 +44,7 @@ export const MovieView = ({ movies }) => {
         };
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setIsFav(res.favMovies.indexOf(movieId) >= 0);
+        handleShow();
         // alert("movie added to favs");
       })
       .catch((error) => {
@@ -62,6 +72,7 @@ export const MovieView = ({ movies }) => {
         };
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setIsFav(res.favMovies.indexOf(movieId) >= 0);
+        handleShow();
         // alert("movie removed from favs");
       })
       .catch((error) => {
@@ -125,14 +136,28 @@ export const MovieView = ({ movies }) => {
           <span>{genre.description}</span>
         </div>
         <br />
-        <Button className="mb-4 me-4" onClick={handleChange}>
+        <Button className="mb-4 me-5" onClick={handleChange}>
           {isFav ? "unFavourite" : "Favourite"}
         </Button>
-        <Link to={`/`}>
-          <Button type="button" className="mb-4" variant="primary">
-            Close
-          </Button>
-        </Link>
+         <Link to={`/`}>
+              <Button type="button" className="mb-4 ms-5 me-3" variant="outline-primary">Back to Movies</Button>
+            </Link>
+            <Link to={`/users`}>
+              <Button type="button" className="mb-4" variant="outline-primary">See My Profile</Button>
+            </Link>
+
+        {/*  new code starts here */}
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header>
+            <Modal.Title>Success!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{isFav ? "Movie added to your Favourites" : "Movie removed from your Favourites"}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleClose}>
+              Okay
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </div>
   );
