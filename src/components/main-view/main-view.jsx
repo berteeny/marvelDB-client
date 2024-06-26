@@ -17,6 +17,28 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
+  const [searchItem, setSearchItem] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState([]);
+
+  const handleInputChange = (e) => {
+    const searchTerm = e.target.value;
+    setSearchItem(searchTerm);
+  };
+
+  const emptySearch = () => {
+    setSearchItem("");
+  };
+
+  useEffect(() => {
+    if (searchItem === "") {
+      setFilteredMovies(movies);
+    } else {
+      const filteredList = movies.filter((movie) => {
+        return movie.title.toLowerCase().includes(searchItem.toLowerCase());
+      });
+      setFilteredMovies(filteredList);
+    }
+  }, [searchItem, movies]);
 
   useEffect(() => {
     if (!token) {
@@ -62,6 +84,9 @@ export const MainView = () => {
           setToken(null);
           localStorage.clear();
         }}
+        emptySearch={emptySearch}
+        handleInputChange={handleInputChange}
+        searchItem={searchItem}
       />
       <Row className="justify-content-md-center">
         <Routes>
@@ -120,7 +145,7 @@ export const MainView = () => {
                   <Navigate to="/login" replace />
                 ) : (
                   <>
-                    {movies.map((movie) => (
+                    {filteredMovies.map((movie) => (
                       <Col className="mb-5 mt-4" key={movie.id} lg={3} md={4}>
                         <MovieCard movie={movie} />
                       </Col>
@@ -138,7 +163,7 @@ export const MainView = () => {
                   <Navigate to="/login" replace />
                 ) : (
                   <Col md={10}>
-                    <ProfileView movies={movies} />
+                    <ProfileView movies={filteredMovies} />
                   </Col>
                 )}
               </>

@@ -8,12 +8,11 @@ export const ProfileView = ({ movies }) => {
 
   let favMovies = movies.filter((movie) => user.favMovies.includes(movie.id));
 
-  console.log(user);
   return (
     <Container>
       <Row>
         <Col>
-          <Card bg="light" className="mt-4" style={{ width: '75%' }}>
+          <Card bg="light" className="mt-4" style={{ width: "75%" }}>
             <Card.Body>
               <div>
                 <div>
