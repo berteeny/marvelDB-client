@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
@@ -13,9 +12,9 @@ export const SignupView = () => {
     event.preventDefault();
 
     const data = {
-      username: username,
+      username: username.toLowerCase(),
       password: password,
-      email: email,
+      email: email.toLowerCase(),
       birthday: birthday,
     };
 
@@ -37,7 +36,6 @@ export const SignupView = () => {
 
   return (
     <Form className="m-3" onSubmit={handleSubmit}>
-      {/* <h1 className="my-5 text-primary fw-bold">Sign Up</h1> */}
       <Form.Group controlId="signupUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
