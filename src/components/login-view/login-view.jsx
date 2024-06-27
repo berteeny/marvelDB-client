@@ -9,7 +9,7 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
     const data = {
-      username: username,
+      username: username.toLowerCase(),
       password: password,
     };
     fetch("https://movie-api-v2dh.onrender.com/login", {
@@ -37,7 +37,6 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <Form className="m-3" onSubmit={handleSubmit}>
-      {/* <h1 className="my-5 text-primary fw-bold">Log In</h1> */}
       <Form.Group controlId="loginUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
