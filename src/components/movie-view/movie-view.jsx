@@ -45,7 +45,6 @@ export const MovieView = ({ movies }) => {
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setIsFav(res.favMovies.indexOf(movieId) >= 0);
         handleShow();
-        // alert("movie added to favs");
       })
       .catch((error) => {
         console.error(error);
@@ -73,7 +72,6 @@ export const MovieView = ({ movies }) => {
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setIsFav(res.favMovies.indexOf(movieId) >= 0);
         handleShow();
-        // alert("movie removed from favs");
       })
       .catch((error) => {
         console.error(error);
@@ -139,19 +137,31 @@ export const MovieView = ({ movies }) => {
         <Button className="mb-4 me-5" onClick={handleChange}>
           {isFav ? "unFavourite" : "Favourite"}
         </Button>
-         <Link to={`/`}>
-              <Button type="button" className="mb-4 ms-5 me-3" variant="outline-primary">Back to Movies</Button>
-            </Link>
-            <Link to={`/users`}>
-              <Button type="button" className="mb-4" variant="outline-primary">See My Profile</Button>
-            </Link>
-
-        {/*  new code starts here */}
+        <div>
+          <Link to={`/`}>
+            <Button
+              type="button"
+              className="mb-4  me-3"
+              variant="outline-primary"
+            >
+              Back to Movies
+            </Button>
+          </Link>
+          <Link to={`/users`}>
+            <Button type="button" className="mb-4" variant="outline-primary">
+              See My Profile
+            </Button>
+          </Link>
+        </div>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header>
             <Modal.Title>Success!</Modal.Title>
           </Modal.Header>
-          <Modal.Body>{isFav ? "Movie added to your Favourites" : "Movie removed from your Favourites"}</Modal.Body>
+          <Modal.Body>
+            {isFav
+              ? "Movie added to your Favourites"
+              : "Movie removed from your Favourites"}
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={handleClose}>
               Okay
