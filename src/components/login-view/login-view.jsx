@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Badge from 'react-bootstrap/Badge';
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -48,6 +49,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <>
+    <h1 style={{ color: "rgb(182, 45, 29)" }} className="my-4 fw-bold">Log In</h1>
       <Form className="m-3" onSubmit={handleSubmit}>
         <Form.Group controlId="loginUsername">
           <Form.Label>Username:</Form.Label>

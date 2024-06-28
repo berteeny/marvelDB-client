@@ -45,6 +45,9 @@ export const SignupView = () => {
 
   return (
     <>
+      <h1 style={{ color: "rgb(182, 45, 29)" }} className="my-4 fw-bold">
+        Sign Up
+      </h1>
       <Form className="m-3" onSubmit={handleSubmit}>
         <Form.Group controlId="signupUsername">
           <Form.Label>Username:</Form.Label>
@@ -75,7 +78,7 @@ export const SignupView = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mt-3" controlId="signupBirthday">
+        <Form.Group className="my-3" controlId="signupBirthday">
           <Form.Label>Birthday:</Form.Label>
           <Form.Control
             type="date"
