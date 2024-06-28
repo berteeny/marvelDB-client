@@ -15,13 +15,10 @@ export const MovieView = ({ movies }) => {
     user.favMovies ? user.favMovies.indexOf(movieId) >= 0 : false
   );
   const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
 
   // for modals
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleShow2 = () => setShow2(true);
-  const handleClose2 = () => setShow2(false);
 
   //"favourite" toggle switch functions
   const addFavMovie = () => {
