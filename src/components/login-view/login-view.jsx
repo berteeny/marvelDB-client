@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Badge from 'react-bootstrap/Badge';
+import Alert from 'react-bootstrap/Alert';
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -79,7 +79,7 @@ export const LoginView = ({ onLoggedIn }) => {
         <Modal.Header>
           <Modal.Title>Error</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Your username or pssword is incorrect</Modal.Body>
+        <Modal.Body>Your username or password is incorrect.</Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             Okay
