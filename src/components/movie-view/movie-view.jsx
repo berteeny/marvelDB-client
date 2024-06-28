@@ -35,7 +35,7 @@ export const MovieView = ({ movies }) => {
     )
       .then((response) => response.json())
       .then((res) => {
-        updatedUser = {
+        const updatedUser = {
           ...user,
           favMovies: res.favMovies,
         };
@@ -62,7 +62,7 @@ export const MovieView = ({ movies }) => {
     )
       .then((response) => response.json())
       .then((res) => {
-        updatedUser = {
+        const updatedUser = {
           ...user,
           favMovies: res.favMovies,
         };
