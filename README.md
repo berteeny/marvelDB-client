@@ -17,7 +17,7 @@ MarvelFlix is a client-side, single-page React application which displays a coll
 - Users can edit their information or permanently delete their account and all associated information via the `ProfileEditView` component
 
 ## Hosting & Installation 
-The application is hosted via [Netlify](marvelflixdb.netlify.app) here.
+The application is hosted via Netlify [here](https://marvelflixdb.netlify.app/).
 
 To run the application locally, this repository can be pulled to local host and the build process run with Parcel:
 
