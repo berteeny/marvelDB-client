@@ -1,6 +1,6 @@
 # MarvelFlix
 
-MarvelFlix is a client-side, single-page React application which displays a collection of all current movies in the Marvel Cinematic Universe, and allows users to read about and save movies to their profile.
+MarvelFlix is a client-side, single-page React application which displays a collection of all current movies in the Marvel Cinematic Universe, and allows users to read about and save movies to their profile. The app uses an API created by myself - of which the Github repository can be found [here](https://github.com/berteeny/Movie_API) and the live version can be found [here](https://movie-api-v2dh.onrender.com/documentation.html). (Note * the API takes an extra few moments to load on first startup, as it is hosted using Render's free version).
 
 ## Technologies
 - React
